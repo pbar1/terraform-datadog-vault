@@ -1,11 +1,11 @@
 variable "title" {
   description = "Name of the timeboard"
-  default     = "Vault Runtime Status (TF)"
+  default     = "Vault Status"
 }
 
 variable "description" {
   description = "Description of the timeboard's content"
-  default     = "(Created by Terraform) Timeboard showing Vault metrics"
+  default     = "(Created by Terraform) Timeboard showing Hashicorp Vault metrics"
 }
 
 variable "read_only" {
@@ -14,11 +14,11 @@ variable "read_only" {
 }
 
 variable "template_variable_default" {
-  description = "Default value for the `$vault_cluster` template variable"
+  description = "Default value for the `$vault_cluster` Datadog template variable"
   default     = "*"
 }
 
 variable "template_variable_prefix" {
-  description = "Tag group for the `$vault_cluster` template variable"
+  description = "Tag group for the `$vault_cluster` Datadog template variable"
   default     = null
 }
