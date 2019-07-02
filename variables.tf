@@ -12,3 +12,13 @@ variable "read_only" {
   description = "Makes the timeboard read-only"
   default     = true
 }
+
+variable "template_variable_default" {
+  description = "Default value for the `$vault_cluster` template variable"
+  default     = "*"
+}
+
+variable "template_variable_prefix" {
+  description = "Tag group for the `$vault_cluster` template variable"
+  default     = null
+}

@@ -12,7 +12,9 @@ resource "datadog_timeboard" "vault" {
   read_only   = var.read_only
 
   template_variable {
-    name = "vault_cluster"
+    name    = "vault_cluster"
+    prefix  = var.template_variable_prefix
+    default = var.template_variable_default
   }
 
   graph {
@@ -81,12 +83,12 @@ resource "datadog_timeboard" "vault" {
   }
 
   graph {
-    title     = "GC Pause Time (ns/min)"
+    title     = "GC Pause Time (ms/min)"
     viz       = "timeseries"
     autoscale = true
 
     request {
-      q    = "per_minute(avg:vault.runtime.total_gc_pause_ns{$vault_cluster})"
+      q    = "per_minute(avg:vault.runtime.total_gc_pause_ns{$vault_cluster})/1000000"
       type = "line"
     }
   }

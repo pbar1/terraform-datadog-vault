@@ -11,4 +11,21 @@ Keep tabs on Hashicorp Vault using Datadog. This module creates:
     - `DATADOG_APP_KEY` environment variable
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| description | Description of the timeboard's content | string | `"(Created by Terraform) Timeboard showing Vault metrics"` | no |
+| read\_only | Makes the timeboard read-only | string | `"true"` | no |
+| template\_variable\_default | Default value for the `$vault_cluster` template variable | string | `"*"` | no |
+| template\_variable\_prefix | Tag group for the `$vault_cluster` template variable | string | `"null"` | no |
+| title | Name of the timeboard | string | `"Vault Runtime Status (TF)"` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| id | Unique ID of the Datadog timeboard |
+| url | URL of the Datadog timeboard |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
